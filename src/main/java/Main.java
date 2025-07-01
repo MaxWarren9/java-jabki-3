@@ -16,7 +16,7 @@ public class Main {
 //        Домашнее задание. 1.
         int a = 5;
         int b = 9;
-        System.out.printf("Сумма чисел между %d и %d включительно равна " + sumRange(a, b), a, b);
+        System.out.printf("Сумма чисел между %d и %d включительно равна %d", a, b, sumRange(a,b));
         System.out.println();
 
 //        2.
@@ -42,7 +42,7 @@ public class Main {
         System.out.println(calculateAverage(2, 5, 9));
 
 //        7.
-        System.out.println(calculateHypotenuse(15.0, 8.0));
+        System.out.println(calculateHypotenuse(15, 8));
     }
 
     public static void printHello() {
@@ -153,7 +153,7 @@ public class Main {
 
     public static int calculateFactorial(int number) {
         if (number < 0) {
-            throw new IllegalArgumentException("Факториал может быть посчитан только для натуральных чисел.");
+            throw new IllegalArgumentException("Факториал может быть посчитан только для целых неотрицательных значений");
         }
         int factorial = 1;
         for (int i = number; i > 0; i--) {
@@ -170,7 +170,7 @@ public class Main {
         }
         DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
         otherSymbols.setDecimalSeparator('.');
-        String pattern = "#.##";
+        String pattern = "0.##";
         DecimalFormat decimalFormat = new DecimalFormat(pattern, otherSymbols);
         String result = decimalFormat.format(Math.PI * Math.pow(radius, 2));
         return Double.parseDouble(result);
