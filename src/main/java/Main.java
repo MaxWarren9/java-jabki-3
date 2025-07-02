@@ -16,7 +16,7 @@ public class Main {
 //        Домашнее задание. 1.
         int a = 5;
         int b = 9;
-        System.out.printf("Сумма чисел между %d и %d включительно равна %d", a, b, sumRange(a,b));
+        System.out.printf("Сумма чисел между %d и %d включительно равна %d", a, b, sumRange(a, b));
         System.out.println();
 
 //        2.
@@ -108,26 +108,24 @@ public class Main {
      */
 
     // Метод 1. сумма чисел
-
     public static int sumRange(int a, int b) {
         if (a > b) {
             throw new IllegalArgumentException("Первое число в диапазоне должно быть меньше второго числа. Введите корректные параметры для чисел.");
         }
-            int sum = 0;
-            for (int i = a; i <= b; i++) {
-                sum += i;
-            }
-            return sum;
+        int sum = 0;
+        for (int i = a; i <= b; i++) {
+            sum += i;
+        }
+        return sum;
     }
 
 //    Метод 2. Сумма чисел и конкатенация
-
-    public static int add(int a, int b) {
-        long result = (long) a + b;
+    public static int add(int one, int two) {
+        int result = one + two;
         if (result > Integer.MAX_VALUE) {
             throw new ArithmeticException("Сумма чисел больше максимально допустимой.");
         }
-        return (int) result;
+        return result;
     }
 
     public static String add(String one, String two) {
@@ -135,22 +133,20 @@ public class Main {
     }
 
 //    Метод 3. Максимальное значение массива
-
     public static int findMax(int[] numbers) {
-        if (numbers.length == 0 || numbers == null) {
+        if (numbers == null || numbers.length == 0) {
             throw new IllegalArgumentException("Данный метод не работает с пустым массивом.");
         }
         int biggestNumber = numbers[0];
-        for (int num : numbers) {
-            if (num > biggestNumber) {
-                biggestNumber = num;
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > biggestNumber) {
+                biggestNumber = numbers[i];
             }
         }
         return biggestNumber;
     }
 
 //    Метод 4. Вычисление факториала числа через цикл for
-
     public static int calculateFactorial(int number) {
         if (number < 0) {
             throw new IllegalArgumentException("Факториал может быть посчитан только для целых неотрицательных значений");
@@ -163,7 +159,6 @@ public class Main {
     }
 
 //    Метод 5. Расчет площади круга и прямоугольника (с точностью до двух знаков для круга)
-
     public static double calculateArea(int radius) {
         if (radius < 0) {
             throw new IllegalArgumentException("Введите положительное значение радиуса.");
@@ -184,13 +179,11 @@ public class Main {
     }
 
 //    Метод 6. Расчет среднего арифметического для трех чисел
-
     public static double calculateAverage(double firstNumber, double secondNumber, double thirdNumber) {
         return (firstNumber + secondNumber + thirdNumber) / 3;
     }
 
 //    Метод 7. Расчет длины гипотенузы по двум катетам
-
     public static double calculateHypotenuse(double cathetus1, double cathetus2) {
         if (cathetus1 <= 0 || cathetus2 <= 0) {
             throw new IllegalArgumentException("Катет не может быть меньше или равен 0");
